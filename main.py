@@ -83,8 +83,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f"I didn't understand: {text}")
 
 #Custom command
-async def custom_comand(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("This is a custom command")
+#async def custom_comand(update: Update, context: ContextTypes.DEFAULT_TYPE):
+  #  await update.message.reply_text("This is a custom command")
 
 # Error handler
 async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     # Commands
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CommandHandler('help', help_command))
-    app.add_handler(CommandHandler('custom', custom_comand))
+    #app.add_handler(CommandHandler('custom', custom_comand))
 
     # Messages: Handle category messages like "sports"
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_category_message))
